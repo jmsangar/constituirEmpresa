@@ -13,12 +13,9 @@
 </head>
 
 <body>
-
-
-
 	<div class="container_16" id="cabecera" >
       <div class="grid_6 suffix_2"id="titulogeneral" >
-       <img src="<?php bloginfo("template_url"); ?>/images/cabecera940_394.png" width="940" height="394"  alt=""/>					      </div>
+       <img src="<?php bloginfo("template_url"); ?>/images/aguaLogoSombra.png" width="940" height="394"  alt=""/>					      </div>
    
    		<div class="clear"></div> 
 	</div>
@@ -27,14 +24,8 @@
     
 <div class="container_16" id="cuerpo">
    <div class="grid_16" id="navegador">
-   <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Quienes somos</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Noticias</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
+    <?php get_template_part(mainnav);?>
+   
      
    </div>
      
