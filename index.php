@@ -1,6 +1,6 @@
 <?php 
 /**
- * Plantilla que se usa para mostrar las páginas de Tag 
+ * Plantilla que se usa para mostrar la página del Index 
  *
  * @ Tema: constituir empresa
  * @ Cevillalba
