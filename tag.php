@@ -16,18 +16,12 @@
 	
     <!--      Contenido central   -->
     <style type="text/css">
-    #noticia {
-	margin: 0px;
-	padding: 0px;
-	float: left;
-	left: 0px;
-	top: 0px;
-}
+   
     </style>
      
   
   
-  <div class="grid_13 alpha" id="categoria" >
+  <div class="grid_12" id="categoria" >
   <h1 style="text-align: center">Boletin: <?php echo single_tag_title( '', false );?></h1>
   
   
@@ -41,10 +35,11 @@
 			$thumb_id = get_post_thumbnail_id();
 			$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size');
 			$thumb_url_medium = wp_get_attachment_image_src($thumb_id,'medium');
+			$thumb_url_medium = wp_get_attachment_image_src($thumb_id,'medium');
 			$thumb_url_full = wp_get_attachment_image_src($thumb_id,'full');
 		?>
 
-		<img src="<?php echo $thumb_url_full[0]?>"  alt="imagen grande"></div>
+		<img src="<?php echo $thumb_url_full[0]?>"  alt="imagen pequeña"></div>
 	 
       
        
@@ -55,6 +50,8 @@
     <!--Falta arreglar esto-->
     
     <p><a href="<?php the_permalink(); ?>"><?php the_excerpt();?></a></p>
+    <hr>
+
     <div class="clear"></div>
     
 

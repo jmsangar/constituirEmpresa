@@ -1,42 +1,61 @@
+<?php 
+/**
+ * Plantilla que se usa para mostrar las páginas de Tag 
+ *
+ * @ Tema: constituir empresa
+ * @ Cevillalba
+ */
+?>
 
-<!--      Cabecera   -->
 
-<?php get_header(); ?>
-
-<!--      Lateral izquierdo   -->
-		
-  <?php get_template_part(sidebar) ?>
-  
- <!--      Contenido central   --> 
-  
-  <div class="grid_9">
-  <h1>Contenido del index </h1>
-  <div class="grid_9">
-     
     
-   </div>
-   <div class="grid_9">
-     <hr />
-     <h1>Noticia 2</h1>
-       Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libris consulatu. No mei ferri graeco dicunt, ad cum veri accommodare. Sed at malis omnesque delicata, usu et iusto zzril meliore. Dicunt maiorum eloquentiam cum cu, sit summo dolor essent te. Ne quodsi nusquam legendos 
-   </div>
-   <div class="grid_9">
-     <hr />
-     <h2>Noticia 3 </h2>
-     <p>His vero singulis ea, quem euripidis abhorreant mei ut, et populo iriure vix. Usu ludus affert voluptaria ei, vix ea error definitiones, movet fastidii signiferumque in qui.&nbsp;</p>
+      
+  <?php get_header();?>
+
+
+  
+    <!--      Contenido central   -->
+    <style type="text/css">
+   
+    </style>
      
-   </div>
-   <div class="grid_9">
+  
+  
+  <div class="grid_12" id="categoria" >
+
+   <?php $posts=query_posts( 'tag=septiembre-2014' . '&order=ASC'); ?>
    
-     <hr />
-     <h2>Noticia 4 </h2>
-     <p>Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo. Homero salutatus suscipiantur eum &nbsp;</p>
+
+  <h1 style="text-align: center">Boletin: <?php echo single_tag_title( '', false );?></h1>
+ 
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <!-- post -->
+  <div class="grid_2" id="noticia"><?php
+      $thumb_id = get_post_thumbnail_id();
+      $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size');
+      $thumb_url_medium = wp_get_attachment_image_src($thumb_id,'medium');
+      $thumb_url_medium = wp_get_attachment_image_src($thumb_id,'medium');
+      $thumb_url_full = wp_get_attachment_image_src($thumb_id,'full');
+    ?>
+
+    <img src="<?php echo $thumb_url_full[0]?>"  alt="imagen pequeña"></div>
      
+    <h5 style="noticia float: left;"><a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+    </h5>
+       
+    <p><a href="<?php the_permalink(); ?>"><?php the_excerpt();?></a></p>
+    <hr>
+
+    <div class="clear"></div>
+
+  <?php endwhile; ?>
+  <!-- post navigation -->
+  <?php else: ?>
+  <!-- no posts found -->
+  <p>No hay posts</p>
+  <?php endif; ?>
+ 
    </div>
- </div>
-   
-   <!--menu de la derecha   -->
-   <?php get_template_part(aside) ?> 
-   
-   <!--footer   -->
-  <?php get_footer();?>
+
+ <?php get_template_part(aside) ?>
+<?php get_footer( );?>

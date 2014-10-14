@@ -24,13 +24,7 @@
     
 <div class="container_16" id="cuerpo">
    <div class="grid_16" id="navegador">
-   <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="http://localhost/cevillalba/?page_id=189">Quienes somos</a></li>
-      <li><a href="http://localhost/cevillalba/?tag=servicios">Servicios</a></li>
-      <li><a href="http://localhost/cevillalba/?page_id=12">Noticias</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
+   <?php get_template_part(mainnav);?>
      
    </div>
      

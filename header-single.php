@@ -24,13 +24,6 @@
     
 <div class="container_16" id="cuerpo">
    <div class="grid_16" id="navegador">
-   <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Quienes somos</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Noticias</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
+   <?php get_template_part(mainnav);?>
      
    </div>
