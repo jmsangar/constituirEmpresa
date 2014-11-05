@@ -16,7 +16,13 @@
 	
     <!--      Contenido central   -->
     <style type="text/css">
-   
+    #noticia {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	left: 0px;
+	top: 0px;
+}
     </style>
      
   

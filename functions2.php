@@ -17,6 +17,14 @@ add_image_size( 'home-thumb', 380, 245, true );
 }
 
 
+	register_nav_menus (
+		array('header_menu' => 'es el menu de la cabecera ',
+			'footer_menu' => 'es el menu del pie ',
+			'aside_menu' => 'es el menu del aside ',
+			'blog' => 'es el menu del blog'
+		)
+	);
+
 
 //
 // Array que crea los diferentes "huecos" de menús. Usar a discreción
@@ -26,46 +34,7 @@ add_image_size( 'home-thumb', 380, 245, true );
 
 
 /*
-	$aside = array(
-	'theme_location'  => 'aside',
-	'menu'            => '',
-	'container'       => 'div',
-	'container_class' => '',
-	'container_id'    => '',
-	'menu_class'      => 'menu',
-	'menu_id'         => '',
-	'echo'            => true,
-	'fallback_cb'     => 'wp_page_menu',
-	'before'          => '',
-	'after'           => '',
-	'link_before'     => '',
-	'link_after'      => '',
-	'items_wrap'      => '',
-	'depth'           => 0,
-	'walker'          => ''
-);
-	wp_nav_menu( $aside );
-*/
-
-add_action( 'init', 'register_my_menus' );
-
-//
-// huecos del menú
-//
-function register_my_menus() {
-	register_nav_menus(
-		array(
-			'side' => __('menu lateral'),
-			'aside_menu' => 'menu del aside ',
-            'footer' => __( 'Menu del footer' ),
-			'mobile' => __( 'Menu Para Móviles (4 items solo)' )
-		)
-	);
-}
-
-
-
-/*$defaults = array(
+	$defaults = array(
 	'theme_location'  => 'main-nav-menu',
 	'menu'            => '',
 	'container'       => 'div',
@@ -84,8 +53,27 @@ function register_my_menus() {
 	'walker'          => ''
 );
 	wp_nav_menu( $defaults );
-
 */
+
+add_action( 'init', 'register_my_menus' );
+
+
+function register_my_menus() {
+	register_nav_menus(
+		array(
+			'main-nav-menu' => __( 'Menu Superior' ),
+			'aside' => __('menu lateral'),
+            'footer' => __( 'Menu del footer' ),
+			'mobile' => __( 'Menu Para Móviles (4 items solo)' )
+		)
+	);
+}
+
+
+
+
+
+
 
 
 //

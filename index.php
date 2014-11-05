@@ -23,7 +23,7 @@
   
   <div class="grid_12" id="categoria" >
 
-   <?php $posts=query_posts( 'tag=septiembre-2014' . '&order=ASC'); ?>
+   <?php $posts=query_posts( 'tag=octubre-2014' . '&order=ASC'); ?>
    
 
   <h1 style="text-align: center">Boletin: <?php echo single_tag_title( '', false );?></h1>
